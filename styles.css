@@ -533,7 +533,7 @@ body {
     width: 5px;
     border-radius: 6px;
 
-    background: linear-gradient(180deg, #E87722, #FF9955);
+    background: var(--pwc-orange-subtle);
 }
 
 /* SUBTLE GLOW LINE (TOP) */
@@ -545,7 +545,7 @@ body {
     right: 0;
     height: 2px;
 
-    background: linear-gradient(90deg, transparent, rgba(232,119,34,0.6), transparent);
+    background: var(--pwc-orange-subtle);
 }
 
 /* TITLE */
