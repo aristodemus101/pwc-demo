@@ -422,6 +422,17 @@
                     </div>
                 </div>
 
+                <!-- Skill Demand Trends Heatmap -->
+                <div class="content-section">
+                    <h2 class="section-title">Skill Demand Trends (Last 12 Weeks)</h2>
+                    <div class="chart-container">
+                        <canvas id="skillTrendsChart" style="max-height: 400px;"></canvas>
+                    </div>
+                    <div style="background: #FFF8F4; padding: 20px; border-radius: 8px; margin-top: 16px; border-left: 4px solid var(--pwc-orange);">
+                        <p style="font-size: 14px; color: var(--pwc-gray);"><strong>Insight:</strong> EU AI Act Compliance shows 340% increase in demand over 12 weeks. Generative AI and Prompt Engineering maintain steady growth. Action recommended for high-demand areas.</p>
+                    </div>
+                </div>
+
                 <h2>Emerging Skill Demand Alerts</h2>
                 <div class="alert-card critical">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
@@ -747,6 +758,91 @@
                         },
                         plugins: {
                             legend: { display: false }
+                        }
+                    }
+                });
+            }
+
+            // Skill Demand Trends Heatmap
+            const skillTrendsCtx = document.getElementById('skillTrendsChart');
+            if (skillTrendsCtx) {
+                const weeks = ['Jan 11', 'Jan 18', 'Jan 25', 'Feb 1', 'Feb 8', 'Feb 15', 'Feb 22', 'Mar 1', 'Mar 8', 'Mar 15', 'Mar 22', 'Mar 29'];
+                
+                new Chart(skillTrendsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: weeks,
+                        datasets: [
+                            {
+                                label: 'AI Governance',
+                                data: [12, 15, 18, 22, 25, 28, 32, 35, 38, 42, 48, 52],
+                                backgroundColor: 'rgba(208, 74, 2, 0.3)',
+                                borderColor: '#D04A02',
+                                borderWidth: 0,
+                                stack: 'Stack 0'
+                            },
+                            {
+                                label: 'EU AI Act Compliance',
+                                data: [5, 6, 8, 12, 15, 22, 28, 35, 42, 52, 58, 67],
+                                backgroundColor: 'rgba(208, 74, 2, 0.8)',
+                                borderColor: '#D04A02',
+                                borderWidth: 0,
+                                stack: 'Stack 1'
+                            },
+                            {
+                                label: 'Generative AI',
+                                data: [18, 20, 22, 25, 28, 30, 32, 35, 38, 40, 42, 45],
+                                backgroundColor: 'rgba(208, 74, 2, 0.5)',
+                                borderColor: '#D04A02',
+                                borderWidth: 0,
+                                stack: 'Stack 2'
+                            },
+                            {
+                                label: 'Prompt Engineering',
+                                data: [8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],
+                                backgroundColor: 'rgba(208, 74, 2, 0.25)',
+                                borderColor: '#D04A02',
+                                borderWidth: 0,
+                                stack: 'Stack 3'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                stacked: false,
+                                grid: { display: true, color: 'rgba(0,0,0,0.05)' },
+                                ticks: { display: false }
+                            },
+                            y: {
+                                stacked: false,
+                                grid: { display: false },
+                                ticks: { 
+                                    autoSkip: false,
+                                    font: { size: 11 }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'bottom',
+                                labels: { 
+                                    boxWidth: 15,
+                                    font: { size: 12 },
+                                    padding: 15
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.dataset.label + ': ' + context.parsed.x + ' searches';
+                                    }
+                                }
+                            }
                         }
                     }
                 });
