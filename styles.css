@@ -541,7 +541,7 @@ body {
 }
 
 .insight-box p {
-    color: rgba(255, 255, 255, 0.95);
+    color: black;
     font-size: 16px;
     line-height: 1.8;
     margin-bottom: var(--space-md);
