@@ -123,6 +123,30 @@
         .footer p { color: #CCC; font-size: 14px; line-height: 1.6; }
         .footer h4 { color: var(--pwc-orange); margin-bottom: 12px; }
         
+        /* Heatmap Cells */
+        .heatmap-cell { 
+            flex: 1; 
+            height: 50px; 
+            margin: 0 2px; 
+            border-radius: 4px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: transparent;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .heatmap-cell:hover { 
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            color: #2D3436;
+        }
+        .heatmap-cell:hover::after {
+            content: attr(data-value);
+        }
+        
         @media (max-width: 968px) {
             .comparison-grid, .nav-menu { grid-template-columns: 1fr; }
             h1 { font-size: 36px; }
@@ -426,10 +450,100 @@
                 <div class="content-section">
                     <h2 class="section-title">Skill Demand Trends (Last 12 Weeks)</h2>
                     <div class="chart-container">
-                        <canvas id="skillTrendsChart" style="max-height: 400px;"></canvas>
+                        <div id="skillTrendsHeatmap" style="overflow-x: auto;">
+                            <div style="display: flex; margin-bottom: 16px; padding-left: 200px;">
+                                <div style="flex: 1; text-align: center; font-size: 12px; color: #636E72; font-weight: 600;">Jan 11</div>
+                                <div style="flex: 1; text-align: center; font-size: 12px; color: #636E72; font-weight: 600;">Jan 25</div>
+                                <div style="flex: 1; text-align: center; font-size: 12px; color: #636E72; font-weight: 600;">Feb 8</div>
+                                <div style="flex: 1; text-align: center; font-size: 12px; color: #636E72; font-weight: 600;">Feb 22</div>
+                                <div style="flex: 1; text-align: center; font-size: 12px; color: #636E72; font-weight: 600;">Mar 8</div>
+                                <div style="flex: 1; text-align: center; font-size: 12px; color: #636E72; font-weight: 600;">Mar 22</div>
+                            </div>
+                            
+                            <!-- AI Governance Row -->
+                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <div style="width: 180px; font-size: 14px; color: #636E72; font-weight: 500;">AI Governance</div>
+                                <div class="heatmap-cell" data-value="12" style="background: rgba(208, 74, 2, 0.15);"></div>
+                                <div class="heatmap-cell" data-value="15" style="background: rgba(208, 74, 2, 0.18);"></div>
+                                <div class="heatmap-cell" data-value="18" style="background: rgba(208, 74, 2, 0.22);"></div>
+                                <div class="heatmap-cell" data-value="22" style="background: rgba(208, 74, 2, 0.25);"></div>
+                                <div class="heatmap-cell" data-value="25" style="background: rgba(208, 74, 2, 0.30);"></div>
+                                <div class="heatmap-cell" data-value="28" style="background: rgba(208, 74, 2, 0.35);"></div>
+                                <div class="heatmap-cell" data-value="32" style="background: rgba(208, 74, 2, 0.40);"></div>
+                                <div class="heatmap-cell" data-value="35" style="background: rgba(208, 74, 2, 0.45);"></div>
+                                <div class="heatmap-cell" data-value="38" style="background: rgba(208, 74, 2, 0.50);"></div>
+                                <div class="heatmap-cell" data-value="42" style="background: rgba(208, 74, 2, 0.55);"></div>
+                                <div class="heatmap-cell" data-value="48" style="background: rgba(208, 74, 2, 0.60);"></div>
+                                <div class="heatmap-cell" data-value="52" style="background: rgba(208, 74, 2, 0.65);"></div>
+                            </div>
+                            
+                            <!-- EU AI Act Compliance Row -->
+                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <div style="width: 180px; font-size: 14px; color: #636E72; font-weight: 500;">EU AI Act Compliance</div>
+                                <div class="heatmap-cell" data-value="5" style="background: rgba(208, 74, 2, 0.10);"></div>
+                                <div class="heatmap-cell" data-value="6" style="background: rgba(208, 74, 2, 0.12);"></div>
+                                <div class="heatmap-cell" data-value="8" style="background: rgba(208, 74, 2, 0.15);"></div>
+                                <div class="heatmap-cell" data-value="12" style="background: rgba(208, 74, 2, 0.20);"></div>
+                                <div class="heatmap-cell" data-value="15" style="background: rgba(208, 74, 2, 0.28);"></div>
+                                <div class="heatmap-cell" data-value="22" style="background: rgba(208, 74, 2, 0.40);"></div>
+                                <div class="heatmap-cell" data-value="28" style="background: rgba(208, 74, 2, 0.52);"></div>
+                                <div class="heatmap-cell" data-value="35" style="background: rgba(208, 74, 2, 0.65);"></div>
+                                <div class="heatmap-cell" data-value="42" style="background: rgba(208, 74, 2, 0.75);"></div>
+                                <div class="heatmap-cell" data-value="52" style="background: rgba(208, 74, 2, 0.85);"></div>
+                                <div class="heatmap-cell" data-value="58" style="background: rgba(208, 74, 2, 0.92);"></div>
+                                <div class="heatmap-cell" data-value="67" style="background: rgba(208, 74, 2, 1.0);"></div>
+                            </div>
+                            
+                            <!-- Generative AI Row -->
+                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <div style="width: 180px; font-size: 14px; color: #636E72; font-weight: 500;">Generative AI</div>
+                                <div class="heatmap-cell" data-value="18" style="background: rgba(208, 74, 2, 0.28);"></div>
+                                <div class="heatmap-cell" data-value="20" style="background: rgba(208, 74, 2, 0.30);"></div>
+                                <div class="heatmap-cell" data-value="22" style="background: rgba(208, 74, 2, 0.32);"></div>
+                                <div class="heatmap-cell" data-value="25" style="background: rgba(208, 74, 2, 0.35);"></div>
+                                <div class="heatmap-cell" data-value="28" style="background: rgba(208, 74, 2, 0.38);"></div>
+                                <div class="heatmap-cell" data-value="30" style="background: rgba(208, 74, 2, 0.40);"></div>
+                                <div class="heatmap-cell" data-value="32" style="background: rgba(208, 74, 2, 0.42);"></div>
+                                <div class="heatmap-cell" data-value="35" style="background: rgba(208, 74, 2, 0.45);"></div>
+                                <div class="heatmap-cell" data-value="38" style="background: rgba(208, 74, 2, 0.48);"></div>
+                                <div class="heatmap-cell" data-value="40" style="background: rgba(208, 74, 2, 0.50);"></div>
+                                <div class="heatmap-cell" data-value="42" style="background: rgba(208, 74, 2, 0.52);"></div>
+                                <div class="heatmap-cell" data-value="45" style="background: rgba(208, 74, 2, 0.55);"></div>
+                            </div>
+                            
+                            <!-- Prompt Engineering Row -->
+                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <div style="width: 180px; font-size: 14px; color: #636E72; font-weight: 500;">Prompt Engineering</div>
+                                <div class="heatmap-cell" data-value="8" style="background: rgba(208, 74, 2, 0.15);"></div>
+                                <div class="heatmap-cell" data-value="10" style="background: rgba(208, 74, 2, 0.18);"></div>
+                                <div class="heatmap-cell" data-value="12" style="background: rgba(208, 74, 2, 0.20);"></div>
+                                <div class="heatmap-cell" data-value="14" style="background: rgba(208, 74, 2, 0.22);"></div>
+                                <div class="heatmap-cell" data-value="16" style="background: rgba(208, 74, 2, 0.25);"></div>
+                                <div class="heatmap-cell" data-value="18" style="background: rgba(208, 74, 2, 0.28);"></div>
+                                <div class="heatmap-cell" data-value="20" style="background: rgba(208, 74, 2, 0.30);"></div>
+                                <div class="heatmap-cell" data-value="22" style="background: rgba(208, 74, 2, 0.32);"></div>
+                                <div class="heatmap-cell" data-value="24" style="background: rgba(208, 74, 2, 0.35);"></div>
+                                <div class="heatmap-cell" data-value="26" style="background: rgba(208, 74, 2, 0.38);"></div>
+                                <div class="heatmap-cell" data-value="28" style="background: rgba(208, 74, 2, 0.40);"></div>
+                                <div class="heatmap-cell" data-value="30" style="background: rgba(208, 74, 2, 0.42);"></div>
+                            </div>
+                            
+                            <!-- Legend -->
+                            <div style="display: flex; align-items: center; margin-top: 24px; padding-left: 180px; gap: 8px;">
+                                <span style="font-size: 12px; color: #636E72; margin-right: 8px;">Search Volume:</span>
+                                <div style="display: flex; align-items: center; gap: 4px;">
+                                    <div style="width: 30px; height: 20px; background: rgba(208, 74, 2, 0.15); border-radius: 2px;"></div>
+                                    <span style="font-size: 11px; color: #636E72; margin-right: 12px;">Low</span>
+                                    <div style="width: 30px; height: 20px; background: rgba(208, 74, 2, 0.4); border-radius: 2px;"></div>
+                                    <span style="font-size: 11px; color: #636E72; margin-right: 12px;">Medium</span>
+                                    <div style="width: 30px; height: 20px; background: rgba(208, 74, 2, 1.0); border-radius: 2px;"></div>
+                                    <span style="font-size: 11px; color: #636E72;">High</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div style="background: #FFF8F4; padding: 20px; border-radius: 8px; margin-top: 16px; border-left: 4px solid var(--pwc-orange);">
-                        <p style="font-size: 14px; color: var(--pwc-gray);"><strong>Insight:</strong> EU AI Act Compliance shows 340% increase in demand over 12 weeks. Generative AI and Prompt Engineering maintain steady growth. Action recommended for high-demand areas.</p>
+                        <p style="font-size: 14px; color: var(--pwc-gray);"><strong>Insight:</strong> EU AI Act Compliance shows 340% increase in demand over 12 weeks (darkest cells). Generative AI and Prompt Engineering maintain steady growth. Action recommended for high-demand areas.</p>
                     </div>
                 </div>
 
@@ -758,91 +872,6 @@
                         },
                         plugins: {
                             legend: { display: false }
-                        }
-                    }
-                });
-            }
-
-            // Skill Demand Trends Heatmap
-            const skillTrendsCtx = document.getElementById('skillTrendsChart');
-            if (skillTrendsCtx) {
-                const weeks = ['Jan 11', 'Jan 18', 'Jan 25', 'Feb 1', 'Feb 8', 'Feb 15', 'Feb 22', 'Mar 1', 'Mar 8', 'Mar 15', 'Mar 22', 'Mar 29'];
-                
-                new Chart(skillTrendsCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: weeks,
-                        datasets: [
-                            {
-                                label: 'AI Governance',
-                                data: [12, 15, 18, 22, 25, 28, 32, 35, 38, 42, 48, 52],
-                                backgroundColor: 'rgba(208, 74, 2, 0.3)',
-                                borderColor: '#D04A02',
-                                borderWidth: 0,
-                                stack: 'Stack 0'
-                            },
-                            {
-                                label: 'EU AI Act Compliance',
-                                data: [5, 6, 8, 12, 15, 22, 28, 35, 42, 52, 58, 67],
-                                backgroundColor: 'rgba(208, 74, 2, 0.8)',
-                                borderColor: '#D04A02',
-                                borderWidth: 0,
-                                stack: 'Stack 1'
-                            },
-                            {
-                                label: 'Generative AI',
-                                data: [18, 20, 22, 25, 28, 30, 32, 35, 38, 40, 42, 45],
-                                backgroundColor: 'rgba(208, 74, 2, 0.5)',
-                                borderColor: '#D04A02',
-                                borderWidth: 0,
-                                stack: 'Stack 2'
-                            },
-                            {
-                                label: 'Prompt Engineering',
-                                data: [8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],
-                                backgroundColor: 'rgba(208, 74, 2, 0.25)',
-                                borderColor: '#D04A02',
-                                borderWidth: 0,
-                                stack: 'Stack 3'
-                            }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: true,
-                        indexAxis: 'y',
-                        scales: {
-                            x: {
-                                stacked: false,
-                                grid: { display: true, color: 'rgba(0,0,0,0.05)' },
-                                ticks: { display: false }
-                            },
-                            y: {
-                                stacked: false,
-                                grid: { display: false },
-                                ticks: { 
-                                    autoSkip: false,
-                                    font: { size: 11 }
-                                }
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                display: true,
-                                position: 'bottom',
-                                labels: { 
-                                    boxWidth: 15,
-                                    font: { size: 12 },
-                                    padding: 15
-                                }
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        return context.dataset.label + ': ' + context.parsed.x + ' searches';
-                                    }
-                                }
-                            }
                         }
                     }
                 });
