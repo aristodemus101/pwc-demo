@@ -33,12 +33,19 @@
         h1 { font-size: 48px; color: var(--pwc-orange); margin-bottom: 16px; }
         h2 { font-size: 32px; color: var(--pwc-charcoal); margin: 32px 0 24px; }
         h3 { font-size: 24px; color: var(--pwc-charcoal); margin: 24px 0 16px; }
+        .section-title { font-size: 32px; color: var(--pwc-charcoal); margin-bottom: 24px; }
+        .subsection-title { font-size: 20px; color: var(--pwc-charcoal); margin-bottom: 16px; font-weight: 700; }
+        
+        /* Content Sections */
+        .content-section { margin-bottom: 48px; }
         
         /* Metrics */
         .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 48px 0; }
         .metric-card { background: linear-gradient(135deg, #FFF 0%, #F9F9F9 100%); padding: 32px 24px; border-radius: 8px; border-left: 6px solid var(--pwc-orange); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .metric-value { font-size: 48px; font-weight: 700; color: var(--pwc-orange); }
         .metric-label { font-size: 14px; font-weight: 600; text-transform: uppercase; margin: 8px 0; }
+        .metric-change { font-size: 14px; margin-top: 4px; }
+        .metric-change.positive { color: var(--success-green); }
         .metric-card.success { border-left-color: var(--success-green); }
         .metric-card.success .metric-value { color: var(--success-green); }
         .metric-card.error { border-left-color: var(--error-red); }
@@ -52,27 +59,38 @@
         .comparison-list li { padding: 12px 0 12px 28px; position: relative; }
         .comparison-list li:before { content: "•"; position: absolute; left: 0; color: var(--pwc-orange); font-size: 24px; }
         
-        /* Capabilities */
-        .capabilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .capability-card { background: white; padding: 28px; border-radius: 8px; border: 2px solid #E5E5E5; transition: 0.3s; }
-        .capability-card:hover { border-color: var(--pwc-orange); transform: translateY(-4px); box-shadow: 0 4px 16px rgba(208,74,2,0.12); }
-        .capability-number { font-size: 48px; font-weight: 700; color: var(--pwc-orange); opacity: 0.2; margin-bottom: 16px; }
+        /* Charts */
+        .chart-container { background: white; padding: 24px; border-radius: 12px; border: 1px solid #E9ECEF; }
+        
+        /* Timeline */
+        .timeline { display: flex; flex-direction: column; gap: 0; }
+        .timeline-item { display: flex; gap: 16px; padding: 16px 0; position: relative; }
+        .timeline-item:not(:last-child):after { content: ''; position: absolute; left: 11px; top: 40px; bottom: -16px; width: 2px; background: #E9ECEF; }
+        .timeline-marker { width: 24px; height: 24px; border-radius: 50%; background: #E9ECEF; border: 3px solid white; flex-shrink: 0; z-index: 1; }
+        .timeline-item.success .timeline-marker { background: var(--success-green); }
+        .timeline-content { flex: 1; }
+        .timeline-week { font-size: 13px; color: #95A5A6; font-weight: 600; margin-bottom: 4px; }
+        .timeline-text { font-size: 15px; color: #2D3436; }
         
         /* Buttons */
         .btn-primary { background: var(--pwc-orange); color: white; border: none; padding: 12px 32px; font-size: 14px; font-weight: 600; text-transform: uppercase; border-radius: 4px; cursor: pointer; transition: 0.2s; }
         .btn-primary:hover { background: #B03D00; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(208,74,2,0.3); }
         .btn-secondary { background: white; color: var(--pwc-orange); border: 2px solid var(--pwc-orange); padding: 10px 32px; font-size: 14px; font-weight: 600; text-transform: uppercase; border-radius: 4px; cursor: pointer; }
         .btn-secondary:hover { background: var(--pwc-orange); color: white; }
+        .btn-example { background: white; border: 2px solid #E9ECEF; padding: 8px 16px; border-radius: 6px; font-size: 14px; cursor: pointer; transition: 0.2s; }
+        .btn-example:hover { border-color: var(--pwc-orange); color: var(--pwc-orange); }
         
         /* Insight Box */
         .insight-box { background: linear-gradient(135deg, #FFF8F4 0%, #F3F5F7 100%); color: white; padding: 40px; border-radius: 8px; margin-top: 64px; border-left: 6px solid var(--pwc-orange); }
         .insight-highlight { font-weight: 600; color: var(--pwc-orange); font-size: 18px; margin-top: 16px; }
-        .insight-box p:first-of-type {  color: black; }
+        .insight-box p:first-of-type { color: black; }
         
         /* Search */
         .search-container { display: flex; gap: 16px; margin: 32px 0; }
         .search-input { flex: 1; padding: 14px 20px; font-size: 16px; border: 2px solid #E5E5E5; border-radius: 8px; }
         .search-input:focus { outline: none; border-color: var(--pwc-orange); }
+        .search-examples { display: flex; gap: 12px; align-items: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .examples-label { font-weight: 600; color: var(--pwc-gray); }
         
         /* Expert Cards */
         .expert-card { background: white; border-radius: 8px; border: 2px solid #E5E5E5; padding: 24px; border-left: 4px solid var(--pwc-orange); margin-bottom: 24px; }
@@ -85,7 +103,7 @@
         .alert-card.high { border-left-color: #FF991F; background: #FFFBF5; }
         .alert-badge { padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; color: white; }
         
-        /* Timeline */
+        /* Timeline Steps */
         .timeline-step { display: flex; gap: 20px; margin-bottom: 32px; }
         .step-marker { width: 120px; padding: 12px; background: #F9F9F9; border: 2px solid #E5E5E5; border-radius: 6px; font-weight: 600; text-align: center; }
         .timeline-step.success .step-marker { background: #E3FCEF; border-color: var(--success-green); color: var(--success-green); }
@@ -216,6 +234,107 @@
                     </div>
                 </div>
 
+                <!-- Learning Progress Section -->
+                <div class="content-section">
+                    <h2 class="section-title">Your Learning Journey</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px;">
+                        <!-- Learning Progress Chart -->
+                        <div class="chart-container">
+                            <h3 class="subsection-title">Course Completion Progress</h3>
+                            <canvas id="learningProgressChart" style="max-height: 300px;"></canvas>
+                        </div>
+                        
+                        <!-- Learning Stats -->
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div class="metric-card">
+                                <div class="metric-value">4</div>
+                                <div class="metric-label">Courses Completed</div>
+                                <div class="metric-change positive">This month</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">8.5hrs</div>
+                                <div class="metric-label">Learning Time</div>
+                                <div class="metric-change positive">+2.5hrs vs last month</div>
+                            </div>
+                            <div class="metric-card" style="border-left-color: #10B981;">
+                                <div class="metric-value" style="color: #10B981;">7 days</div>
+                                <div class="metric-label">Learning Streak</div>
+                                <div class="metric-change" style="color: #10B981;">Keep it up!</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Activity Timeline -->
+                    <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E9ECEF; margin-bottom: 32px;">
+                        <h3 class="subsection-title">Recent Activity</h3>
+                        <div class="timeline">
+                            <div class="timeline-item success">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-week">Today, 10:30 AM</div>
+                                    <div class="timeline-text">Completed: EU AI Act Compliance Fundamentals (100%)</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item success">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-week">Yesterday, 3:15 PM</div>
+                                    <div class="timeline-text">Started: RAG Systems Implementation (30% complete)</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-week">March 25, 2:45 PM</div>
+                                    <div class="timeline-text">Searched: "EU AI Act compliance requirements" (3 times)</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item success">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-week">March 24, 11:00 AM</div>
+                                    <div class="timeline-text">Completed: AI Bias Detection Workshop (100%)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommended Learning Path -->
+                    <div style="background: linear-gradient(135deg, #FFF4ED 0%, white 100%); padding: 32px; border-radius: 12px; border: 2px solid #E87722;">
+                        <h3 class="subsection-title" style="color: #E87722;">Your Recommended Learning Path</h3>
+                        <p style="color: #636E72; margin-bottom: 24px;">Based on your goals and recent activity, here's your path to becoming an AI Governance Expert</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div style="display: flex; align-items: center; gap: 16px; background: white; padding: 16px; border-radius: 8px; border: 1px solid #E9ECEF;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: #10B981; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">1</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 700; color: #2D3436;">Complete RAG Systems Implementation</div>
+                                    <div style="font-size: 14px; color: #636E72;">30% complete • 2.5 hours remaining</div>
+                                </div>
+                                <button class="btn-primary" style="padding: 8px 24px;">Continue</button>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; gap: 16px; background: white; padding: 16px; border-radius: 8px; border: 1px solid #E9ECEF;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: #E87722; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">2</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 700; color: #2D3436;">Model Risk Management Fundamentals</div>
+                                    <div style="font-size: 14px; color: #636E72;">Not started • 4 hours • Recommended next</div>
+                                </div>
+                                <button class="btn-secondary" style="padding: 8px 24px;">Start</button>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; gap: 16px; background: white; padding: 16px; border-radius: 8px; border: 1px solid #E9ECEF; opacity: 0.7;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: #95A5A6; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">3</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 700; color: #2D3436;">Advanced AI Ethics & Responsible AI</div>
+                                    <div style="font-size: 14px; color: #636E72;">Locked • Complete step 2 first</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="insight-box">
                     <h3>Employee Impact</h3>
                     <p>Development becomes proactive, not reactive. Skills are recognized regardless of job title.</p>
@@ -232,6 +351,22 @@
                 <div class="search-container">
                     <input type="text" id="expertSearch" class="search-input" placeholder="e.g., 'AI governance for healthcare'">
                     <button class="btn-primary" onclick="searchExperts()">Search Experts</button>
+                </div>
+
+                <div class="search-examples">
+                    <span class="examples-label">Quick searches:</span>
+                    <button class="btn-example" onclick="searchExample('ai governance')">
+                        AI Governance <span style="background: #E87722; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 4px;">8</span>
+                    </button>
+                    <button class="btn-example" onclick="searchExample('healthcare ai')">
+                        Healthcare AI <span style="background: #E87722; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 4px;">5</span>
+                    </button>
+                    <button class="btn-example" onclick="searchExample('generative ai')">
+                        Generative AI <span style="background: #E87722; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 4px;">6</span>
+                    </button>
+                    <button class="btn-example" onclick="searchExample('cloud architecture')">
+                        Cloud Architecture <span style="background: #E87722; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 4px;">7</span>
+                    </button>
                 </div>
 
                 <div id="searchResults" style="display: none;">
@@ -304,6 +439,109 @@
                     </div>
                     <p><strong>38 searches this month</strong> <span style="color: var(--error-red); font-weight: 700;">+185%</span></p>
                     <p><strong>Recommendation:</strong> Expand existing GenAI workshop capacity</p>
+                </div>
+
+                <!-- Department Skill Distribution -->
+                <div class="content-section">
+                    <h2 class="section-title">Department Skill Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="deptHeatmapChart" style="max-height: 400px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Learning Funnel -->
+                <div class="content-section">
+                    <h2 class="section-title">Learning Engagement Funnel</h2>
+                    <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #E9ECEF;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 48px;">
+                            <div style="text-align: center; flex: 1;">
+                                <div style="font-size: 48px; font-weight: 800; color: #E87722;">1,247</div>
+                                <div style="font-size: 14px; font-weight: 700; color: #636E72; text-transform: uppercase;">Invited</div>
+                            </div>
+                            <div style="display: flex; align-items: center; color: #95A5A6;">→</div>
+                            <div style="text-align: center; flex: 1;">
+                                <div style="font-size: 48px; font-weight: 800; color: #E87722;">847</div>
+                                <div style="font-size: 14px; font-weight: 700; color: #636E72; text-transform: uppercase;">Started</div>
+                                <div style="font-size: 13px; color: #10B981; font-weight: 600;">67.9%</div>
+                            </div>
+                            <div style="display: flex; align-items: center; color: #95A5A6;">→</div>
+                            <div style="text-align: center; flex: 1;">
+                                <div style="font-size: 48px; font-weight: 800; color: #10B981;">621</div>
+                                <div style="font-size: 14px; font-weight: 700; color: #636E72; text-transform: uppercase;">In Progress</div>
+                                <div style="font-size: 13px; color: #10B981; font-weight: 600;">73.3%</div>
+                            </div>
+                            <div style="display: flex; align-items: center; color: #95A5A6;">→</div>
+                            <div style="text-align: center; flex: 1;">
+                                <div style="font-size: 48px; font-weight: 800; color: #10B981;">512</div>
+                                <div style="font-size: 14px; font-weight: 700; color: #636E72; text-transform: uppercase;">Completed</div>
+                                <div style="font-size: 13px; color: #10B981; font-weight: 600;">82.4%</div>
+                            </div>
+                        </div>
+                        <div style="background: #F8F9FA; padding: 16px; border-radius: 8px; text-align: center;">
+                            <strong>Overall Conversion Rate:</strong> <span style="color: #10B981; font-weight: 700; font-size: 18px;">41.0%</span> (Started → Completed)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Learners Leaderboard -->
+                <div class="content-section">
+                    <h2 class="section-title">Top Learners This Month</h2>
+                    <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E9ECEF;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid #E9ECEF;">
+                                    <th style="text-align: left; padding: 12px; font-weight: 700; color: #2D3436;">Rank</th>
+                                    <th style="text-align: left; padding: 12px; font-weight: 700; color: #2D3436;">Employee</th>
+                                    <th style="text-align: left; padding: 12px; font-weight: 700; color: #2D3436;">Department</th>
+                                    <th style="text-align: center; padding: 12px; font-weight: 700; color: #2D3436;">Courses</th>
+                                    <th style="text-align: center; padding: 12px; font-weight: 700; color: #2D3436;">Hours</th>
+                                    <th style="text-align: center; padding: 12px; font-weight: 700; color: #2D3436;">Streak</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #E9ECEF; background: #FFF4ED;">
+                                    <td style="padding: 16px; font-weight: 700; color: #E87722;">🥇 1</td>
+                                    <td style="padding: 16px;"><strong>Priya Menon</strong></td>
+                                    <td style="padding: 16px; color: #636E72;">Risk & Regulatory</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700;">8</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700;">14.5</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700; color: #10B981;">21 days</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #E9ECEF;">
+                                    <td style="padding: 16px; font-weight: 700; color: #95A5A6;">🥈 2</td>
+                                    <td style="padding: 16px;"><strong>Sarah Chen</strong></td>
+                                    <td style="padding: 16px; color: #636E72;">Technology</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700;">6</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700;">11.2</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700; color: #10B981;">14 days</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #E9ECEF;">
+                                    <td style="padding: 16px; font-weight: 700; color: #CD7F32;">🥉 3</td>
+                                    <td style="padding: 16px;"><strong>Kenji Tanaka</strong></td>
+                                    <td style="padding: 16px; color: #636E72;">AI Engineering</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700;">5</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700;">10.8</td>
+                                    <td style="padding: 16px; text-align: center; font-weight: 700; color: #10B981;">12 days</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #E9ECEF;">
+                                    <td style="padding: 16px; color: #636E72;">4</td>
+                                    <td style="padding: 16px;">Arjun Shetty</td>
+                                    <td style="padding: 16px; color: #636E72;">Technology Risk</td>
+                                    <td style="padding: 16px; text-align: center;">5</td>
+                                    <td style="padding: 16px; text-align: center;">9.5</td>
+                                    <td style="padding: 16px; text-align: center; color: #636E72;">8 days</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 16px; color: #636E72;">5</td>
+                                    <td style="padding: 16px;">Priya Sharma</td>
+                                    <td style="padding: 16px; color: #636E72;">AI Engineering</td>
+                                    <td style="padding: 16px; text-align: center;">4</td>
+                                    <td style="padding: 16px; text-align: center;">8.5</td>
+                                    <td style="padding: 16px; text-align: center; color: #636E72;">7 days</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="insight-box">
@@ -428,6 +666,9 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             });
+
+            // Initialize charts after page load
+            initCharts();
         });
 
         const mockExperts = [
@@ -435,6 +676,11 @@
             { id: 2, name: 'Dr. James Wilson', role: 'Senior Manager', office: 'London', years: 10, projects: 28, skills: ['Generative AI (9/10)', 'AI Ethics (9/10)'], availability: 'Available in 2 weeks', match: 92, keywords: ['generative', 'ai', 'genai', 'llm', 'ethics'] },
             { id: 3, name: 'Sarah Chen', role: 'Senior Consultant', office: 'San Francisco', years: 6, projects: 12, skills: ['AI Governance (8/10)', 'GDPR (6/10)'], availability: 'Available next week', match: 89, keywords: ['ai', 'governance', 'gdpr', 'compliance', 'eu'] }
         ];
+
+        function searchExample(query) {
+            document.getElementById('expertSearch').value = query;
+            searchExperts();
+        }
 
         function searchExperts() {
             const query = document.getElementById('expertSearch').value.toLowerCase();
@@ -475,6 +721,71 @@
                     document.getElementById('loadingState').style.display = 'none';
                     document.getElementById('aiResults').style.display = 'block';
                 }, 2000);
+            }
+        }
+
+        function initCharts() {
+            // Learning Progress Chart
+            const learningCtx = document.getElementById('learningProgressChart');
+            if (learningCtx) {
+                new Chart(learningCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['EU AI Act', 'RAG Systems', 'AI Bias Detection', 'Model Risk Mgmt'],
+                        datasets: [{
+                            label: 'Completion %',
+                            data: [100, 30, 100, 0],
+                            backgroundColor: ['#10B981', '#E87722', '#10B981', '#E9ECEF'],
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: { beginAtZero: true, max: 100 }
+                        },
+                        plugins: {
+                            legend: { display: false }
+                        }
+                    }
+                });
+            }
+
+            // Department Heatmap Chart
+            const deptCtx = document.getElementById('deptHeatmapChart');
+            if (deptCtx) {
+                new Chart(deptCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['AI Engineering', 'Technology Risk', 'Risk & Regulatory', 'Consulting', 'Operations'],
+                        datasets: [
+                            {
+                                label: 'AI Governance',
+                                data: [85, 72, 68, 45, 28],
+                                backgroundColor: '#E87722'
+                            },
+                            {
+                                label: 'Healthcare AI',
+                                data: [45, 38, 55, 62, 15],
+                                backgroundColor: '#10B981'
+                            },
+                            {
+                                label: 'Cloud Architecture',
+                                data: [92, 78, 35, 48, 55],
+                                backgroundColor: '#3B82F6'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        indexAxis: 'y',
+                        scales: {
+                            x: { beginAtZero: true, max: 100 }
+                        }
+                    }
+                });
             }
         }
     </script>
