@@ -235,26 +235,263 @@
             <div class="container">
                 <h1>Employee Experience: Sarah Chen</h1>
                 <div style="background: #F9F9F9; padding: 24px; border-radius: 8px; margin: 32px 0;">
-                    <h3>Profile</h3>
-                    <p><strong>Name:</strong> Sarah Chen</p>
-                    <p><strong>Role:</strong> Senior Consultant</p>
-                    <p><strong>Experience:</strong> 6 years</p>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px;">
+                        <div>
+                            <h3>Profile</h3>
+                            <p><strong>Name:</strong> Sarah Chen</p>
+                            <p><strong>Role:</strong> Senior Consultant</p>
+                            <p><strong>Experience:</strong> 6 years</p>
+                            <p><strong>Department:</strong> Technology</p>
+                            <p><strong>Location:</strong> San Francisco</p>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 12px;">Current Focus Areas</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span style="background: var(--pwc-orange); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;">AI Governance</span>
+                                <span style="background: #10B981; color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;">EU AI Act</span>
+                                <span style="background: #3B82F6; color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;">RAG Systems</span>
+                                <span style="background: #F59E0B; color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;">Model Risk</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <h2>Personalized Learning Dashboard</h2>
-                <div style="background: white; border: 2px solid #E5E5E5; border-radius: 8px; padding: 32px; margin: 24px 0;">
-                    <div style="background: #F9F9F9; padding: 16px 24px; margin: -32px -32px 24px; border-radius: 8px 8px 0 0;">
+                <!-- Skills Radar Chart -->
+                <div class="content-section">
+                    <h2 class="section-title">Your Skills Profile</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <div class="chart-container">
+                            <h3 class="subsection-title">Skills Assessment</h3>
+                            <canvas id="skillsRadarChart" style="max-height: 300px;"></canvas>
+                        </div>
+                        <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E9ECEF;">
+                            <h3 class="subsection-title">Top Skills</h3>
+                            <div style="display: flex; flex-direction: column; gap: 16px;">
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="font-weight: 600; color: #2D3436;">AI Governance</span>
+                                        <span style="color: var(--pwc-orange); font-weight: 700;">85%</span>
+                                    </div>
+                                    <div style="background: #E9ECEF; height: 8px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: var(--pwc-orange); height: 100%; width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="font-weight: 600; color: #2D3436;">EU AI Act Compliance</span>
+                                        <span style="color: var(--pwc-orange); font-weight: 700;">92%</span>
+                                    </div>
+                                    <div style="background: #E9ECEF; height: 8px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: var(--pwc-orange); height: 100%; width: 92%;"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="font-weight: 600; color: #2D3436;">RAG Systems</span>
+                                        <span style="color: #F59E0B; font-weight: 700;">45%</span>
+                                    </div>
+                                    <div style="background: #E9ECEF; height: 8px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: #F59E0B; height: 100%; width: 45%;"></div>
+                                    </div>
+                                    <span style="font-size: 12px; color: #636E72;">🎯 In progress - 30% complete</span>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="font-weight: 600; color: #2D3436;">Model Risk Management</span>
+                                        <span style="color: #95A5A6; font-weight: 700;">15%</span>
+                                    </div>
+                                    <div style="background: #E9ECEF; height: 8px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: #95A5A6; height: 100%; width: 15%;"></div>
+                                    </div>
+                                    <span style="font-size: 12px; color: #636E72;">📚 Recommended next</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Personalized Micro-Learning Recommendations</h2>
+                
+                <!-- Featured Recommendation -->
+                <div style="background: linear-gradient(135deg, #FFF4ED 0%, white 100%); border: 2px solid var(--pwc-orange); border-radius: 12px; padding: 32px; margin: 24px 0;">
+                    <div style="background: var(--pwc-orange); color: white; display: inline-block; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 16px;">🔥 High Priority</div>
+                    <div style="background: #F9F9F9; padding: 16px 24px; margin: -16px 0 24px; border-radius: 8px 8px 0 0;">
                         <strong style="color: var(--pwc-orange); text-transform: uppercase; font-size: 12px;">Knowledge Gap Detected</strong>
                     </div>
                     <p style="color: var(--pwc-gray); margin-bottom: 16px;">You searched for 'EU AI Act compliance requirements' 3 times this week</p>
                     <h3>EU AI Act: Compliance Fundamentals</h3>
-                    <p><strong>Type:</strong> Micro-learning Module • <strong>Duration:</strong> 20 minutes</p>
+                    <p style="margin: 12px 0;"><strong>Type:</strong> Micro-learning Module • <strong>Duration:</strong> 20 minutes • <strong>Level:</strong> Intermediate</p>
+                    <p style="margin: 12px 0; color: #636E72;">Master the essentials of EU AI Act compliance, risk classification, and documentation requirements.</p>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 24px; border-top: 2px solid #F9F9F9;">
-                        <div>
-                            <div style="font-size: 28px; font-weight: 700; color: var(--pwc-orange);">95%</div>
-                            <div style="font-size: 12px; text-transform: uppercase;">Relevance</div>
+                        <div style="display: flex; gap: 32px;">
+                            <div>
+                                <div style="font-size: 28px; font-weight: 700; color: var(--pwc-orange);">95%</div>
+                                <div style="font-size: 12px; text-transform: uppercase;">Relevance</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 28px; font-weight: 700; color: #10B981;">+12</div>
+                                <div style="font-size: 12px; text-transform: uppercase;">Skill Points</div>
+                            </div>
                         </div>
-                        <button class="btn-primary">Start Learning</button>
+                        <button class="btn-primary" style="padding: 14px 32px;">Start Learning Now</button>
+                    </div>
+                </div>
+
+                <!-- More Micro-Learning Cards Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin: 32px 0;">
+                    <!-- Card 1 -->
+                    <div style="background: white; border: 2px solid #E9ECEF; border-radius: 8px; padding: 24px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--pwc-orange)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#E9ECEF'; this.style.transform='translateY(0)'">
+                        <div style="background: #10B981; color: white; display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-bottom: 12px;">✓ IN PROGRESS</div>
+                        <h3 style="font-size: 18px; margin-bottom: 12px;">RAG Systems Implementation</h3>
+                        <p style="font-size: 14px; color: #636E72; margin-bottom: 16px;">Build production-ready Retrieval-Augmented Generation systems with vector databases.</p>
+                        <div style="margin-bottom: 16px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px;">
+                                <span style="color: #636E72;">Progress</span>
+                                <span style="font-weight: 700; color: #10B981;">30%</span>
+                            </div>
+                            <div style="background: #E9ECEF; height: 6px; border-radius: 3px; overflow: hidden;">
+                                <div style="background: #10B981; height: 100%; width: 30%;"></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #636E72; margin-bottom: 16px;">
+                            <span>⏱ 2.5 hrs remaining</span>
+                            <span>📊 Intermediate</span>
+                        </div>
+                        <button class="btn-primary" style="width: 100%; padding: 10px;">Continue Learning</button>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div style="background: white; border: 2px solid #E9ECEF; border-radius: 8px; padding: 24px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--pwc-orange)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#E9ECEF'; this.style.transform='translateY(0)'">
+                        <div style="background: var(--pwc-orange); color: white; display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-bottom: 12px;">⭐ RECOMMENDED</div>
+                        <h3 style="font-size: 18px; margin-bottom: 12px;">Model Risk Management Basics</h3>
+                        <p style="font-size: 14px; color: #636E72; margin-bottom: 16px;">Understand model validation, governance, and regulatory requirements for AI systems.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #636E72; margin-bottom: 16px;">
+                            <span>⏱ 4 hours</span>
+                            <span>📊 Beginner</span>
+                        </div>
+                        <div style="background: #FFF4ED; padding: 12px; border-radius: 6px; border-left: 3px solid var(--pwc-orange); margin-bottom: 16px;">
+                            <span style="font-size: 12px; color: #2D3436;"><strong>🎯 Perfect fit:</strong> Aligns with your career path to AI Risk Specialist</span>
+                        </div>
+                        <button class="btn-secondary" style="width: 100%; padding: 10px;">Start Module</button>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div style="background: white; border: 2px solid #E9ECEF; border-radius: 8px; padding: 24px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--pwc-orange)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#E9ECEF'; this.style.transform='translateY(0)'">
+                        <div style="background: #3B82F6; color: white; display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-bottom: 12px;">🆕 NEW</div>
+                        <h3 style="font-size: 18px; margin-bottom: 12px;">Prompt Engineering Mastery</h3>
+                        <p style="font-size: 14px; color: #636E72; margin-bottom: 16px;">Learn advanced prompting techniques, chain-of-thought, and few-shot learning strategies.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #636E72; margin-bottom: 16px;">
+                            <span>⏱ 3 hours</span>
+                            <span>📊 Intermediate</span>
+                        </div>
+                        <div style="background: #F0F9FF; padding: 12px; border-radius: 6px; border-left: 3px solid #3B82F6; margin-bottom: 16px;">
+                            <span style="font-size: 12px; color: #2D3436;"><strong>🔥 Trending:</strong> 89 colleagues completed this week</span>
+                        </div>
+                        <button class="btn-secondary" style="width: 100%; padding: 10px;">Explore Module</button>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div style="background: white; border: 2px solid #E9ECEF; border-radius: 8px; padding: 24px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--pwc-orange)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#E9ECEF'; this.style.transform='translateY(0)'">
+                        <div style="background: #8B5CF6; color: white; display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-bottom: 12px;">💎 ADVANCED</div>
+                        <h3 style="font-size: 18px; margin-bottom: 12px;">AI Bias Detection & Mitigation</h3>
+                        <p style="font-size: 14px; color: #636E72; margin-bottom: 16px;">Identify, measure, and mitigate bias in AI models across different demographic groups.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #636E72; margin-bottom: 16px;">
+                            <span>⏱ 5 hours</span>
+                            <span>📊 Advanced</span>
+                        </div>
+                        <div style="background: #FAF5FF; padding: 12px; border-radius: 6px; border-left: 3px solid #8B5CF6; margin-bottom: 16px;">
+                            <span style="font-size: 12px; color: #2D3436;"><strong>🏆 Achievement:</strong> Unlock "Fairness Champion" badge</span>
+                        </div>
+                        <button class="btn-secondary" style="width: 100%; padding: 10px;">View Details</button>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div style="background: white; border: 2px solid #E9ECEF; border-radius: 8px; padding: 24px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--pwc-orange)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#E9ECEF'; this.style.transform='translateY(0)'">
+                        <div style="background: #EC4899; color: white; display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-bottom: 12px;">🎯 SKILLS GAP</div>
+                        <h3 style="font-size: 18px; margin-bottom: 12px;">Cloud AI Deployment (AWS)</h3>
+                        <p style="font-size: 14px; color: #636E72; margin-bottom: 16px;">Deploy and scale AI models on AWS using SageMaker, Lambda, and containerization.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #636E72; margin-bottom: 16px;">
+                            <span>⏱ 6 hours</span>
+                            <span>📊 Intermediate</span>
+                        </div>
+                        <div style="background: #FFF1F2; padding: 12px; border-radius: 6px; border-left: 3px solid #EC4899; margin-bottom: 16px;">
+                            <span style="font-size: 12px; color: #2D3436;"><strong>🎯 Gap alert:</strong> Required for upcoming project</span>
+                        </div>
+                        <button class="btn-secondary" style="width: 100%; padding: 10px;">Start Module</button>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div style="background: white; border: 2px solid #E9ECEF; border-radius: 8px; padding: 24px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--pwc-orange)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#E9ECEF'; this.style.transform='translateY(0)'">
+                        <div style="background: #10B981; color: white; display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-bottom: 12px;">✓ QUICK WIN</div>
+                        <h3 style="font-size: 18px; margin-bottom: 12px;">AI Security Fundamentals</h3>
+                        <p style="font-size: 14px; color: #636E72; margin-bottom: 16px;">Protect AI systems from adversarial attacks, data poisoning, and model theft.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #636E72; margin-bottom: 16px;">
+                            <span>⏱ 45 minutes</span>
+                            <span>📊 Beginner</span>
+                        </div>
+                        <div style="background: #ECFDF5; padding: 12px; border-radius: 6px; border-left: 3px solid #10B981; margin-bottom: 16px;">
+                            <span style="font-size: 12px; color: #2D3436;"><strong>⚡ Quick:</strong> Complete today, boost score by 5%</span>
+                        </div>
+                        <button class="btn-secondary" style="width: 100%; padding: 10px;">Start Now</button>
+                    </div>
+                </div>
+
+                <!-- Achievements & Certifications -->
+                <div class="content-section">
+                    <h2 class="section-title">Achievements & Certifications</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E9ECEF;">
+                            <h3 class="subsection-title">Recent Achievements 🏆</h3>
+                            <div style="display: flex; flex-direction: column; gap: 16px;">
+                                <div style="display: flex; gap: 16px; padding: 16px; background: #FFF4ED; border-radius: 8px; border-left: 4px solid var(--pwc-orange);">
+                                    <div style="font-size: 36px;">🥇</div>
+                                    <div>
+                                        <div style="font-weight: 700; color: #2D3436;">EU AI Act Expert</div>
+                                        <div style="font-size: 13px; color: #636E72;">Completed all EU AI Act modules with 95%+ scores</div>
+                                        <div style="font-size: 12px; color: var(--pwc-orange); font-weight: 600; margin-top: 4px;">Earned today</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 16px; padding: 16px; background: #F0F9FF; border-radius: 8px; border-left: 4px solid #3B82F6;">
+                                    <div style="font-size: 36px;">🔥</div>
+                                    <div>
+                                        <div style="font-weight: 700; color: #2D3436;">7-Day Streak</div>
+                                        <div style="font-size: 13px; color: #636E72;">Learning consistently for 7 days in a row</div>
+                                        <div style="font-size: 12px; color: #3B82F6; font-weight: 600; margin-top: 4px;">Active now</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 16px; padding: 16px; background: #F0FDF4; border-radius: 8px; border-left: 4px solid #10B981;">
+                                    <div style="font-size: 36px;">⚡</div>
+                                    <div>
+                                        <div style="font-weight: 700; color: #2D3436;">Speed Learner</div>
+                                        <div style="font-size: 13px; color: #636E72;">Completed 4 modules this month</div>
+                                        <div style="font-size: 12px; color: #10B981; font-weight: 600; margin-top: 4px;">Earned 3 days ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E9ECEF;">
+                            <h3 class="subsection-title">Certifications 📜</h3>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <div style="padding: 16px; background: white; border-radius: 8px; border: 2px solid #E9ECEF;">
+                                    <div style="font-weight: 700; color: var(--pwc-orange); margin-bottom: 4px;">AI Governance Specialist</div>
+                                    <div style="font-size: 13px; color: #636E72;">PwC Internal Certification</div>
+                                    <div style="font-size: 12px; color: #95A5A6; margin-top: 8px;">Issued: March 2026</div>
+                                </div>
+                                <div style="padding: 16px; background: white; border-radius: 8px; border: 2px solid #E9ECEF;">
+                                    <div style="font-weight: 700; color: #10B981; margin-bottom: 4px;">EU AI Act Compliance Expert</div>
+                                    <div style="font-size: 13px; color: #636E72;">PwC Internal Certification</div>
+                                    <div style="font-size: 12px; color: #95A5A6; margin-top: 8px;">Issued: March 2026</div>
+                                </div>
+                                <div style="padding: 16px; background: #F9F9F9; border-radius: 8px; border: 2px dashed #E9ECEF;">
+                                    <div style="font-weight: 700; color: #95A5A6; margin-bottom: 4px;">🔒 Model Risk Manager</div>
+                                    <div style="font-size: 13px; color: #636E72;">Complete 3 more modules to unlock</div>
+                                    <div style="background: #E9ECEF; height: 6px; border-radius: 3px; overflow: hidden; margin-top: 8px;">
+                                        <div style="background: var(--pwc-orange); height: 100%; width: 60%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -321,6 +558,13 @@
                                     <div class="timeline-text">Completed: AI Bias Detection Workshop (100%)</div>
                                 </div>
                             </div>
+                            <div class="timeline-item success">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-week">March 20, 9:00 AM</div>
+                                    <div class="timeline-text">Earned Achievement: Speed Learner 🏆</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -354,6 +598,36 @@
                                     <div style="font-weight: 700; color: #2D3436;">Advanced AI Ethics & Responsible AI</div>
                                     <div style="font-size: 14px; color: #636E72;">Locked • Complete step 2 first</div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peer Comparison -->
+                <div class="content-section">
+                    <h2 class="section-title">How You Compare</h2>
+                    <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E9ECEF;">
+                        <p style="color: #636E72; margin-bottom: 24px;">Compared to peers in Technology department (Senior Consultant level)</p>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 36px; font-weight: 800; color: #10B981;">Top 15%</div>
+                                <div style="font-size: 14px; color: #636E72; margin-top: 8px;">Learning Hours</div>
+                                <div style="font-size: 12px; color: #10B981; font-weight: 600; margin-top: 4px;">↑ Above average</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 36px; font-weight: 800; color: var(--pwc-orange);">Top 25%</div>
+                                <div style="font-size: 14px; color: #636E72; margin-top: 8px;">Completion Rate</div>
+                                <div style="font-size: 12px; color: var(--pwc-orange); font-weight: 600; margin-top: 4px;">↑ Above average</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 36px; font-weight: 800; color: #3B82F6;">92%</div>
+                                <div style="font-size: 14px; color: #636E72; margin-top: 8px;">Avg Score</div>
+                                <div style="font-size: 12px; color: #3B82F6; font-weight: 600; margin-top: 4px;">↑ +8% vs peers</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 36px; font-weight: 800; color: #8B5CF6;">#12</div>
+                                <div style="font-size: 14px; color: #636E72; margin-top: 8px;">Leaderboard Rank</div>
+                                <div style="font-size: 12px; color: #8B5CF6; font-weight: 600; margin-top: 4px;">Out of 247 peers</div>
                             </div>
                         </div>
                     </div>
@@ -914,6 +1188,57 @@
         }
 
         function initCharts() {
+            // Skills Radar Chart
+            const skillsRadarCtx = document.getElementById('skillsRadarChart');
+            if (skillsRadarCtx) {
+                new Chart(skillsRadarCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['AI Governance', 'EU AI Act', 'RAG Systems', 'Model Risk', 'AI Ethics', 'Compliance'],
+                        datasets: [{
+                            label: 'Your Skills',
+                            data: [85, 92, 45, 15, 78, 88],
+                            backgroundColor: 'rgba(208, 74, 2, 0.2)',
+                            borderColor: '#D04A02',
+                            borderWidth: 2,
+                            pointBackgroundColor: '#D04A02',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: '#D04A02'
+                        }, {
+                            label: 'Peer Average',
+                            data: [65, 58, 62, 55, 60, 70],
+                            backgroundColor: 'rgba(149, 165, 166, 0.1)',
+                            borderColor: '#95A5A6',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            pointBackgroundColor: '#95A5A6',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: '#95A5A6'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    stepSize: 20
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }
+
             // Learning Progress Chart
             const learningCtx = document.getElementById('learningProgressChart');
             if (learningCtx) {
