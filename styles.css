@@ -513,7 +513,7 @@ body {
    =========================== */
 
 .insight-box {
-    background: linear-gradient(135deg, var(--text-primary) 0%, #3D4348 100%);
+    background: var(--pwc-orange-subtle);
     color: white;
     padding: var(--space-2xl);
     border-radius: var(--radius-xl);
