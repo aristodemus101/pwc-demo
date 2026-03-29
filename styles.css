@@ -519,9 +519,9 @@ body {
     padding: var(--space-2xl);
     border-radius: var(--radius-xl);
 
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(232,119,34,0.08), transparent 40%),
-        linear-gradient(135deg, #141414 0%, #1F2326 50%, #2D3436 100%);
+   background: 
+       radial-gradient(circle at 10% 20%, rgba(232,119,34,0.06), transparent 45%),
+       linear-gradient(135deg, #F9FAFB 0%, #EEF1F3 50%, #E5E9EC 100%);
 
     box-shadow: var(--shadow-2xl);
 }
