@@ -535,7 +535,7 @@ body {
 .insight-title {
     font-size: 28px;
     font-weight: 700;
-    color: white;
+    color: black;
     margin-bottom: var(--space-md);
     letter-spacing: -0.5px;
 }
