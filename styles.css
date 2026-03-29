@@ -1687,13 +1687,6 @@ body {
 }
 
 /* ===========================
-   INSIGHT BOX → STRONG CONSULTING VISUAL
-   =========================== */
-.insight-box {
-    border-left: 6px solid var(--pwc-orange) !important;
-}
-
-/* ===========================
    TABLE → SHARPER LOOK
    =========================== */
 .comparison-table thead {
