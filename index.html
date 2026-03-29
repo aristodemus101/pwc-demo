@@ -797,9 +797,39 @@
         });
 
         const mockExperts = [
-            { id: 1, name: 'Alex Kim', role: 'Senior Consultant', office: 'Singapore', years: 5, projects: 15, skills: ['Healthcare AI (8/10)', 'HIPAA (8/10)'], availability: 'Available next month', match: 94, keywords: ['healthcare', 'ai', 'hipaa'] },
-            { id: 2, name: 'Dr. James Wilson', role: 'Senior Manager', office: 'London', years: 10, projects: 28, skills: ['Generative AI (9/10)', 'AI Ethics (9/10)'], availability: 'Available in 2 weeks', match: 92, keywords: ['generative', 'ai', 'genai', 'llm', 'ethics'] },
-            { id: 3, name: 'Sarah Chen', role: 'Senior Consultant', office: 'San Francisco', years: 6, projects: 12, skills: ['AI Governance (8/10)', 'GDPR (6/10)'], availability: 'Available next week', match: 89, keywords: ['ai', 'governance', 'gdpr', 'compliance', 'eu'] }
+            // AI Governance experts
+            { id: 1, name: 'Priya Menon', role: 'Senior Manager', office: 'Mumbai', years: 8, projects: 24, skills: ['AI Governance (9/10)', 'Model Risk Management (8/10)', 'AI Ethics (9/10)'], availability: 'Available now', match: 96, keywords: ['ai', 'governance', 'risk', 'ethics', 'model'] },
+            { id: 2, name: 'Sarah Chen', role: 'Senior Consultant', office: 'San Francisco', years: 6, projects: 12, skills: ['AI Governance (8/10)', 'GDPR (6/10)', 'EU AI Act (7/10)'], availability: 'Available next week', match: 89, keywords: ['ai', 'governance', 'gdpr', 'compliance', 'eu'] },
+            { id: 3, name: 'Marcus Weber', role: 'Principal Consultant', office: 'Berlin', years: 11, projects: 32, skills: ['AI Governance (9/10)', 'EU AI Act (9/10)', 'Risk Management (8/10)'], availability: 'Available in 2 weeks', match: 94, keywords: ['ai', 'governance', 'eu', 'act', 'compliance', 'risk'] },
+            { id: 4, name: 'Kenji Tanaka', role: 'Manager', office: 'Tokyo', years: 7, projects: 18, skills: ['AI Governance (8/10)', 'Data Privacy (7/10)', 'AI Strategy (8/10)'], availability: 'Available now', match: 87, keywords: ['ai', 'governance', 'privacy', 'strategy'] },
+            { id: 5, name: 'Dr. Amara Okafor', role: 'Senior Manager', office: 'London', years: 9, projects: 26, skills: ['AI Governance (9/10)', 'Responsible AI (9/10)', 'Ethics (9/10)'], availability: 'Available next month', match: 93, keywords: ['ai', 'governance', 'responsible', 'ethics'] },
+            { id: 6, name: 'Luis Rodriguez', role: 'Senior Consultant', office: 'Madrid', years: 5, projects: 14, skills: ['AI Governance (7/10)', 'Compliance (8/10)', 'Risk (7/10)'], availability: 'Available now', match: 85, keywords: ['ai', 'governance', 'compliance', 'risk'] },
+            { id: 7, name: 'Dr. Anjali Gupta', role: 'Director', office: 'Singapore', years: 12, projects: 38, skills: ['AI Governance (10/10)', 'Enterprise AI (9/10)', 'Strategy (9/10)'], availability: 'Available in 3 weeks', match: 98, keywords: ['ai', 'governance', 'enterprise', 'strategy'] },
+            { id: 8, name: 'Thomas Anderson', role: 'Manager', office: 'New York', years: 6, projects: 16, skills: ['AI Governance (8/10)', 'Financial Services AI (8/10)', 'Compliance (7/10)'], availability: 'Available now', match: 88, keywords: ['ai', 'governance', 'financial', 'compliance'] },
+            
+            // Healthcare AI experts
+            { id: 9, name: 'Dr. Alex Kim', role: 'Senior Consultant', office: 'Singapore', years: 5, projects: 15, skills: ['Healthcare AI (8/10)', 'HIPAA (8/10)', 'Clinical AI (7/10)'], availability: 'Available next month', match: 94, keywords: ['healthcare', 'ai', 'hipaa', 'clinical', 'medical'] },
+            { id: 10, name: 'Dr. Maria Santos', role: 'Principal', office: 'Barcelona', years: 10, projects: 28, skills: ['Healthcare AI (9/10)', 'Medical Imaging AI (9/10)', 'GDPR Healthcare (8/10)'], availability: 'Available in 2 weeks', match: 95, keywords: ['healthcare', 'ai', 'medical', 'imaging', 'gdpr'] },
+            { id: 11, name: 'Rajesh Kumar', role: 'Manager', office: 'Bangalore', years: 7, projects: 19, skills: ['Healthcare AI (8/10)', 'Digital Health (8/10)', 'AI Ethics (7/10)'], availability: 'Available now', match: 91, keywords: ['healthcare', 'ai', 'digital', 'health', 'ethics'] },
+            { id: 12, name: 'Dr. Emily Zhang', role: 'Senior Manager', office: 'Toronto', years: 9, projects: 25, skills: ['Healthcare AI (9/10)', 'Clinical Decision Support (8/10)', 'HIPAA (9/10)'], availability: 'Available next week', match: 93, keywords: ['healthcare', 'ai', 'clinical', 'hipaa', 'decision'] },
+            { id: 13, name: 'Hassan Al-Rashid', role: 'Senior Consultant', office: 'Dubai', years: 6, projects: 17, skills: ['Healthcare AI (7/10)', 'Telemedicine AI (8/10)', 'Data Privacy (7/10)'], availability: 'Available now', match: 89, keywords: ['healthcare', 'ai', 'telemedicine', 'privacy'] },
+            
+            // Generative AI experts
+            { id: 14, name: 'Dr. James Wilson', role: 'Senior Manager', office: 'London', years: 10, projects: 28, skills: ['Generative AI (9/10)', 'AI Ethics (9/10)', 'LLM Strategy (9/10)'], availability: 'Available in 2 weeks', match: 92, keywords: ['generative', 'ai', 'genai', 'llm', 'ethics', 'gpt'] },
+            { id: 15, name: 'Sophia Patel', role: 'Principal Consultant', office: 'San Francisco', years: 8, projects: 22, skills: ['Generative AI (9/10)', 'Prompt Engineering (9/10)', 'RAG Systems (8/10)'], availability: 'Available now', match: 94, keywords: ['generative', 'ai', 'genai', 'prompt', 'rag', 'llm'] },
+            { id: 16, name: 'Yuki Nakamura', role: 'Manager', office: 'Tokyo', years: 6, projects: 18, skills: ['Generative AI (8/10)', 'Content Generation (8/10)', 'AI Safety (7/10)'], availability: 'Available next week', match: 88, keywords: ['generative', 'ai', 'genai', 'content', 'llm'] },
+            { id: 17, name: 'Dr. Michael Chen', role: 'Director', office: 'Boston', years: 11, projects: 34, skills: ['Generative AI (10/10)', 'Research AI (9/10)', 'Model Development (9/10)'], availability: 'Available in 3 weeks', match: 97, keywords: ['generative', 'ai', 'genai', 'research', 'llm', 'model'] },
+            { id: 18, name: 'Fatima Hassan', role: 'Senior Consultant', office: 'Paris', years: 5, projects: 14, skills: ['Generative AI (8/10)', 'Business Applications (8/10)', 'ChatGPT Integration (8/10)'], availability: 'Available now', match: 86, keywords: ['generative', 'ai', 'genai', 'chatgpt', 'business', 'llm'] },
+            { id: 19, name: 'Roberto Silva', role: 'Manager', office: 'São Paulo', years: 7, projects: 20, skills: ['Generative AI (8/10)', 'LLM Fine-tuning (8/10)', 'Deployment (7/10)'], availability: 'Available in 2 weeks', match: 90, keywords: ['generative', 'ai', 'genai', 'llm', 'fine-tuning', 'deployment'] },
+            
+            // Cloud Architecture experts
+            { id: 20, name: 'David Thompson', role: 'Principal Architect', office: 'Seattle', years: 12, projects: 40, skills: ['Cloud Architecture (10/10)', 'AWS (9/10)', 'Azure (9/10)'], availability: 'Available in 3 weeks', match: 96, keywords: ['cloud', 'architecture', 'aws', 'azure', 'gcp'] },
+            { id: 21, name: 'Lakshmi Iyer', role: 'Senior Manager', office: 'Hyderabad', years: 9, projects: 28, skills: ['Cloud Architecture (9/10)', 'Multi-cloud (9/10)', 'DevOps (8/10)'], availability: 'Available now', match: 93, keywords: ['cloud', 'architecture', 'multi-cloud', 'devops', 'aws', 'azure'] },
+            { id: 22, name: 'Oliver Schmidt', role: 'Manager', office: 'Frankfurt', years: 7, projects: 21, skills: ['Cloud Architecture (8/10)', 'Google Cloud (9/10)', 'Kubernetes (8/10)'], availability: 'Available next week', match: 89, keywords: ['cloud', 'architecture', 'gcp', 'google', 'kubernetes'] },
+            { id: 23, name: 'Isabella Costa', role: 'Senior Consultant', office: 'Lisbon', years: 6, projects: 17, skills: ['Cloud Architecture (8/10)', 'Serverless (8/10)', 'Cloud Security (8/10)'], availability: 'Available now', match: 87, keywords: ['cloud', 'architecture', 'serverless', 'security', 'aws'] },
+            { id: 24, name: 'Ahmed Hassan', role: 'Principal Consultant', office: 'Cairo', years: 10, projects: 30, skills: ['Cloud Architecture (9/10)', 'Enterprise Cloud (9/10)', 'Migration (9/10)'], availability: 'Available in 2 weeks', match: 95, keywords: ['cloud', 'architecture', 'enterprise', 'migration', 'aws', 'azure'] },
+            { id: 25, name: 'Jennifer Park', role: 'Senior Manager', office: 'Seoul', years: 8, projects: 24, skills: ['Cloud Architecture (9/10)', 'Cloud Native (9/10)', 'Microservices (8/10)'], availability: 'Available now', match: 91, keywords: ['cloud', 'architecture', 'native', 'microservices', 'kubernetes'] },
+            { id: 26, name: 'Marco Rossi', role: 'Manager', office: 'Milan', years: 6, projects: 18, skills: ['Cloud Architecture (8/10)', 'Infrastructure as Code (8/10)', 'Terraform (8/10)'], availability: 'Available next month', match: 88, keywords: ['cloud', 'architecture', 'infrastructure', 'terraform', 'iac'] }
         ];
 
         function searchExample(query) {
@@ -808,30 +838,64 @@
         }
 
         function searchExperts() {
-            const query = document.getElementById('expertSearch').value.toLowerCase();
-            if (!query) return;
-            const matches = mockExperts.filter(e => e.keywords.some(k => query.includes(k))).sort((a, b) => b.match - a.match);
-            if (!matches.length) return;
+            const query = document.getElementById('expertSearch').value.toLowerCase().trim();
+            if (!query) {
+                document.getElementById('searchResults').style.display = 'none';
+                return;
+            }
+            
+            // Filter and rank matches
+            const matches = mockExperts.filter(expert => {
+                return expert.keywords.some(keyword => query.includes(keyword) || keyword.includes(query));
+            }).sort((a, b) => b.match - a.match);
+            
+            if (matches.length === 0) {
+                document.getElementById('searchResults').style.display = 'block';
+                document.getElementById('resultsCount').textContent = '0';
+                document.getElementById('expertsList').innerHTML = `
+                    <div style="background: #FFF8F4; padding: 32px; border-radius: 8px; text-align: center; border: 2px dashed #E9ECEF;">
+                        <h3 style="color: var(--pwc-gray); margin-bottom: 8px;">No experts found</h3>
+                        <p style="color: #636E72;">Try different keywords like "AI Governance", "Healthcare AI", "Generative AI", or "Cloud Architecture"</p>
+                    </div>
+                `;
+                return;
+            }
+            
             document.getElementById('resultsCount').textContent = matches.length;
             document.getElementById('expertsList').innerHTML = matches.map(e => `
-                <div class="expert-card">
+                <div class="expert-card" style="animation: fadeIn 0.3s;">
                     <div class="expert-header">
                         <div>
                             <h3>${e.name} - ${e.role}</h3>
-                            <p>${e.office} • ${e.years} years • ${e.projects} projects</p>
+                            <p style="color: #636E72;">${e.office} • ${e.years} years • ${e.projects} projects</p>
                         </div>
                         <div class="match-badge">${e.match}%</div>
                     </div>
-                    <p><strong>Skills:</strong> ${e.skills.join(', ')}</p>
-                    <p><strong>Availability:</strong> ${e.availability}</p>
-                    <div style="margin-top: 16px;">
+                    <p style="margin: 12px 0;"><strong>Skills:</strong> ${e.skills.join(', ')}</p>
+                    <p style="margin: 12px 0;"><strong>Availability:</strong> <span style="color: var(--success-green); font-weight: 600;">${e.availability}</span></p>
+                    <div style="margin-top: 16px; display: flex; gap: 12px;">
                         <button class="btn-secondary">View Profile</button>
-                        <button class="btn-primary" style="margin-left: 12px;">Request Consultation</button>
+                        <button class="btn-primary">Request Consultation</button>
                     </div>
                 </div>
             `).join('');
             document.getElementById('searchResults').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('searchResults').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
+        
+        // Add Enter key support for search
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('expertSearch');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchExperts();
+                    }
+                });
+            }
+        });
 
         function showApproach(type) {
             document.getElementById('traditionalApproach').style.display = 'none';
