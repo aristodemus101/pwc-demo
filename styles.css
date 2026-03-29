@@ -1533,3 +1533,159 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* ============================================
+   PWC PREMIUM OVERRIDE LAYER (APPEND ONLY)
+   ============================================ */
+
+/* ===========================
+   GLOBAL UPGRADE
+   =========================== */
+* {
+    transition: all 0.25s ease;
+}
+
+body {
+    letter-spacing: -0.2px;
+}
+
+/* ===========================
+   COLOR BALANCE (LESS ORANGE OVERLOAD)
+   =========================== */
+:root {
+    --pwc-black: #1A1A1A;
+    --pwc-dark: #2B2B2B;
+
+    --gradient-primary: linear-gradient(135deg, #E87722 0%, #D04A02 100%);
+    --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #2D3436 100%);
+}
+
+/* ===========================
+   NAVBAR → GLASS PREMIUM
+   =========================== */
+.navbar {
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ===========================
+   TYPOGRAPHY → CONSULTING STYLE
+   =========================== */
+.hero-title {
+    font-weight: 900;
+    letter-spacing: -2.5px;
+}
+
+.page-title {
+    font-weight: 850;
+    letter-spacing: -1.8px;
+}
+
+.section-title {
+    font-weight: 750;
+}
+
+/* Numbers look more premium */
+.metric-value,
+.score-value,
+.result-stat {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ===========================
+   CARDS → GLASS + DEPTH
+   =========================== */
+.metric-card,
+.capability-card,
+.comparison-column,
+.expert-card,
+.recommendation-card,
+.candidate-card,
+.alert-card,
+.chart-container {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* ===========================
+   LEFT ACCENT (CONSULTING STYLE)
+   =========================== */
+.metric-card::before {
+    width: 4px !important;
+    height: 100% !important;
+}
+
+/* ===========================
+   HOVER → PREMIUM INTERACTION
+   =========================== */
+.metric-card:hover,
+.capability-card:hover,
+.recommendation-card:hover,
+.expert-card:hover,
+.alert-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 
+        0 12px 30px rgba(0,0,0,0.1),
+        0 0 0 1px rgba(232,119,34,0.15);
+}
+
+/* ===========================
+   BUTTONS → ROUNDED PREMIUM
+   =========================== */
+.btn-primary {
+    background: var(--gradient-primary) !important;
+    border-radius: 999px !important;
+    padding: 14px 36px !important;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 12px 25px rgba(232,119,34,0.35);
+}
+
+.btn-secondary {
+    border-radius: 999px !important;
+}
+
+/* ===========================
+   INSIGHT BOX → STRONG CONSULTING VISUAL
+   =========================== */
+.insight-box {
+    border-left: 6px solid var(--pwc-orange) !important;
+}
+
+/* ===========================
+   TABLE → SHARPER LOOK
+   =========================== */
+.comparison-table thead {
+    background: var(--pwc-black) !important;
+}
+
+/* ===========================
+   SEARCH → CLEAN INPUT
+   =========================== */
+.search-input:focus {
+    box-shadow: 0 0 0 3px rgba(232,119,34,0.1);
+}
+
+/* ===========================
+   CONTAINER → TIGHTER (MORE PREMIUM)
+   =========================== */
+.container {
+    max-width: 1200px !important;
+}
+
+/* ===========================
+   MICRO GLOW EFFECT (SUBTLE)
+   =========================== */
+.metric-card:hover::before,
+.capability-card:hover::after {
+    opacity: 1;
+    filter: brightness(1.1);
+}
+
+/* ===========================
+   SCROLL SMOOTHNESS
+   =========================== */
+html {
+    scroll-behavior: smooth;
+}
