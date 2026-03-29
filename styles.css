@@ -520,8 +520,8 @@ body {
     border-radius: var(--radius-xl);
 
    background: 
-       radial-gradient(circle at 10% 20%, rgba(232,119,34,0.06), transparent 5%),
-       linear-gradient(135deg, #F9FAFB 0%, #EEF1F3 50%, #E5E9EC 100%);
+    radial-gradient(circle at 10% 20%, rgba(232,119,34,0.15), transparent 45%),
+    linear-gradient(135deg, #FFF7F2 0%, #FFEDE3 50%, #FFE3D3 100%);
 
     box-shadow: var(--shadow-2xl);
 }
